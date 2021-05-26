@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.返回最短字符串的长度</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 大佬的
+  function findShort(s){
+  return Math.min.apply(null, s.split(' ').map(w => w.length));
+}
+// 我的
+  function findShort(s) {
+    let countArray = []
+    s.split(" ").map((item) => {
+      countArray.push(item.length)
+      return countArray;
+    });
+    console.log(countArray);
+    console.log(Math.min(...countArray));
+
+  }
+  findShort("bitcoin take over the world maybe who knows perhaps");
+</script>

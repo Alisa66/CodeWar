@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      2.将数字分割成每个数字相乘，直到最后乘出来的是个位数，返回相乘次数
+    </title>
+  </head>
+  <body></body>
+</html>
+<script>
+ 
+//  大神的
+function persistence1(num) {
+   var times = 0;
+   
+   num = num.toString();
+   console.log(num);
+   
+   while (num.length > 1) {
+     times++;
+     num = num.split('').map(Number).reduce((a, b) => a * b).toString();
+     
+   }
+   return times;
+}
+
+persistence1(999)
+
+  // 我自己的，无法返回次数
+    function persistence(num) {
+      //code me
+      let result = 0;
+
+      if (num < 10) return 0;
+
+      let array = num.toString().split("").map(Number);
+      console.log(array);
+
+      array.reduce((pre, cur) => {
+        result = pre * cur;
+        return pre * cur;
+      });
+      console.log("下一次的将要传入的值", result);
+      return persistence(result);
+    }
+ 
+  /**
+   * 分解数字
+   **/
+  // 别人的
+  function dismantle(num) {
+    let result = [];
+    do {
+      let rem = num % 10;
+      num = Math.floor(num / 10);
+
+      result.unshift(rem);
+    } while (num > 0);
+    console.log(result);
+
+    return result;
+  }
+
+  /**
+   * 统计分解次数
+   **/
+  function persistence(num) {
+    let result = 0;
+    while (num > 9) {
+      let arr = dismantle(num);
+      console.log(arr);
+
+      num = arr.reduce((acc, cur) => acc * cur);
+      console.log(num);
+
+      result++;
+    }
+
+    return result;
+  }
+
+  persistence(34);
+</script>

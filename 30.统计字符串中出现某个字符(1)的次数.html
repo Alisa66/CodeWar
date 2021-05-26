@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//最优
+function to(n){
+    return n.toString(2).split('0').join('').length
+}
+to(10)
+// 自己的渣渣
+var countBits = function(n) {
+  // Program Me
+  if(n<0){
+    return;
+  }else{
+    const a =  Array.from(parseInt(n).toString(2));
+    let count = 0
+    a.forEach(item =>{
+  
+        if(item === '1'){
+            count++
+        }
+    })
+    return count
+
+  }
+
+};  countBits(10)
+// 网上的
+function findOne(n){
+    const a = parseInt(n).toString(2)
+    let count = 0;
+    
+    console.log(a)
+    
+    var index = a.indexOf(1); //索引号，位置
+    while(index!==-1){
+            count++;
+            index=a.indexOf(1,index+1);
+    }
+     return count
+     
+   
+}
+
+</script>

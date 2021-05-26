@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      2.将数字重新排列后，返回最大的数字
+    </title>
+  </head>
+  <body></body>
+</html>
+<script>
+
+// 大佬的
+function descendingOrder(n){
+  return parseInt(String(n).split('').sort().reverse().join(''))
+}
+
+//我的
+function descendingOrder(n){
+
+    return Number  (n.toString().split("").map(Number).sort().reverse().join(""))
+
+}
+descendingOrder(123456789)
+</script>

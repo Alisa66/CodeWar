@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>将字符串分割为两个一组的数组，不够的用_</title>
+  </head>
+  <body></body>
+</html>
+<script>
+
+   // 先分割数组 我的
+   function solution(str){
+    
+   if(!(str.length%2 === 0)){
+     str = str.concat("_")
+   }
+ 
+   
+   let parts = str.match(/[\s\S]{1,2}/g) || []
+     console.log(parts);
+     
+     
+   
+  }
+  solution("abcd")
+  // others
+  function solution(str){
+  arr = [];
+  for(var i = 0; i < str.length; i += 2){
+    second = str[i+1] || '_';
+    arr.push(str[i] + second);
+  }
+  return arr;
+}
+
+</script>

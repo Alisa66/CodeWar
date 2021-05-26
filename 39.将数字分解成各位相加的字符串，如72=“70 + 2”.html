@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>将数字分解成各位相加的字符串，如72=“70 + 2”</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //大佬
+  const expandedForm = n => n.toString()
+                            .split("")
+                            .reverse()
+                            .map( (a, i) => a * Math.pow(10, i))
+                            .filter(a => a > 0)
+                            .reverse()
+                            .join(" + ");
+  // 我自己的  思路是正确的 就是不够简便
+
+  function expandedForm(num) {
+   
+    const list = String(num).split("");
+
+    console.log(list);
+
+   
+    let j = 1;
+    for (let i = 0; i < list.length; i++) {
+      j = j * 10;
+    }
+
+    console.log(j);
+    let result =[];
+    for (let i = 0; i < list.length; i++) {
+      j = j / 10;
+      result .push(j * list[i])  
+    }
+    console.log(result);
+    console.log(result instanceof Array)
+    let delete_Zero =result.filter(item =>{
+      return  item !== 0
+    })
+    console.log( delete_Zero.join("+"));
+   
+    return  delete_Zero.join("+")
+  }
+
+  expandedForm(70304);
+</script>

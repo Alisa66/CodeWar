@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js驼峰法</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 大佬
+  function toCamelCases(str){
+      var regExp=/[-_]\w/ig;
+      return str.replace(regExp,function(match){
+        
+            return match.charAt(1).toUpperCase();
+       });
+}
+toCamelCases("the-Stealth-Warrior");
+  // 我的方法 思路 先把字符串中的-_替换成空格 然后
+  function toCamelCase(str) {
+    let result = str.replace(/-|_/g, " ");
+
+    const ss = result.split(" ");
+    const start = ss[0];
+    ss.shift();
+    const end = ss.map((value) => {
+        return value.slice(0, 1).toUpperCase() + value.slice(1);
+      }) .join("");
+
+    console.log(start + end);
+
+  
+  }
+  toCamelCase("the-Stealth-Warrior");
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      将每个单词的第一个字母移到单词的末尾，然后在单词的末尾添加“
+      ay”。保留标点符号不变。
+    </title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function pigIt(str) {
+    //Code here
+    // let ss = str.split(" ");
+    // console.log(typeof ss[ss.length-1]);
+
+    
+    var str= str.replace(/[^\w\s]|_/g, "")
+         .replace(/\s+/g, " ");
+     
+    console.log(str.split(" "))
+
+     return str.split(" ").map((value) => {
+       console.log( value.slice(1)+value.slice(0,1)+'ay');
+       
+        return  value.slice(1)+value.slice(0,1)+'ay';
+      }) .join(" ");
+
+  } 
+  pigIt("Pig latin is cool !");
+</script>

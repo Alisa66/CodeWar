@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>括号匹配</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 思路1 统计( 和 )的数量 如果两边数量相等 返回true 否则返回false
+  //  排除一种情况 一开头就是)这样 肯定不能匹配 结尾不能是( 行不通
+  // 思路2 分割成数组后 成对后数组的长度为双数 反之为单数  这种想法不行 如果是（）））
+  // 思路3 数组去重后 比如去掉（之后 剩下的就全是） 如果都配对 数组长度肯定为双数
+  // 去重后的数组长度也为偶数 (这个方法不行 比如出现（（（（））)
+  // 思路4
+  // 判断转换后的数组，数组长度为偶数继续，为单数停止。
+  // 判断奇数位置只能是( 否则false 偶数位置只能是 ) 否则false
+
+  // 最终思路5
+  // 结合思路1和4 先判断(和)的数量是否相等 相等之后在判断奇数位置上是不是存在（
+  // 验证 ()))(()
+  // 思路6
+  // 从左至右 将(存起来 然后去最右边去找匹配的 依次循环 网上找的
+
+  // 高手
+  function validParentheses_2(parens) {
+    let n = 0;
+    for (var i = 0; i < parens.length; i++) {
+      if (parens[i] == "(") n++;
+
+      if (parens[i] == ")") n--;
+
+      if (n < 0) {
+        return false;
+      }
+    }
+    return n == 0;
+  }
+  validParentheses_2("()))(()");
+
+  function validParentheses(parens) {
+    let sub = [];
+    let s = parens.split("");
+    let len = parens.split("").length;
+    console.log(len);
+    console.log(s);
+
+    for (let i = 0; i < len; i++) {
+      if (s[i] === "(") {
+        sub.push(s[i]);
+      } else if (s[i] === ")") {
+        if (sub[sub.length - 1] === "(") {
+          sub.pop();
+        } else {
+          return false;
+        }
+      }
+    }
+    return sub.length === 0 ? true : false;
+  }
+  validParentheses("())(()");
+</script>

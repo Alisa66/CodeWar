@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>返回数组中长度为4的字符</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 大佬的 和我的一样
+  const friend = friends => friends.filter(friend => friend.length == 4);
+
+
+  function friend(friends) {
+    //your code here
+    let res = [];
+    res = friends.filter((item) => {
+      return item.length == 4;
+    });
+    console.log(friends);
+    console.log(res);
+  }
+  friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]);
+</script>

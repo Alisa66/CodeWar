@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main{
+        width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">   
+       <h1>去重相邻元素</h1>
+
+    <h3>
+      var uniqueInOrders = function (iterable) { <br>
+        console.log(
+          [].filter.call(iterable, function (a, i) {
+            return iterable[i - 1] !== a;
+          })
+        );
+      };
+    </h3>
+    <h3>
+      uniqueInOrders([]);<br>
+      var uniqueInOrder = function (iterable) {<br>
+        const arr = Array.isArray(iterable) ? iterable : Array.from(iterable);<br>
+        if (arr.length === 0) {<br>
+          console.log([]);<br>
+          return [];<br>
+        } else {<br>
+          let res = [arr[0]];<br>
+          for (let i = 1; i < arr.length; i++) {<br>
+            if (arr[i] !== res[res.length - 1]) {<br>
+              res.push(arr[i]);<br>
+            }<br>
+          }<br>
+          console.log(res);<br>
+    
+          return res;<br>
+        }
+      };
+      uniqueInOrder([]);<br>
+    </h1>
+  <h3>
+    var uniqueInOrder_one = function (iterable) {<br>
+      var res = [];<br>
+      for (var i = 0; i < iterable.length; i++) {<br>
+        if (iterable[i] != iterable[i + 1]) res.push(iterable[i]);<br>
+      }<br>
+      return res;<br>
+    };
+  </h2>
+</div>
+  </body>
+</html>
+<script>
+  // 大佬
+  var uniqueInOrders = function (iterable) {
+    console.log(
+      [].filter.call(iterable, function (a, i) {
+        return iterable[i - 1] !== a;
+      })
+    );
+  };
+  // 自己
+  uniqueInOrders([]);
+  var uniqueInOrder = function (iterable) {
+    const arr = Array.isArray(iterable) ? iterable : Array.from(iterable);
+    if (arr.length === 0) {
+      console.log([]);
+      return [];
+    } else {
+      let res = [arr[0]];
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] !== res[res.length - 1]) {
+          res.push(arr[i]);
+        }
+      }
+      console.log(res);
+
+      return res;
+    }
+  };
+  uniqueInOrder([]);
+
+  // 更乐于接受这一个
+  var uniqueInOrder_one = function (iterable) {
+    var res = [];
+    for (var i = 0; i < iterable.length; i++) {
+      if (iterable[i] != iterable[i + 1]) res.push(iterable[i]);
+    }
+    return res;
+  };
+</script>
