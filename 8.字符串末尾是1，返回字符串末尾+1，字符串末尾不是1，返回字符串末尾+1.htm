@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+    8.字符串末尾是1，返回字符串末尾+1，字符串末尾不是1，返回字符串末尾+1
+</title>
+</head>
+<body></body>
+</html>
+<script>
+// 大神的
+function incrementStrings(input) {
+    return input.replace(/([0-8]?)(9*)$/, function(s, d, ns) {
+        return +d + 1 + ns.replace(/9/g, '0');
+    });
+}
+
+function incrementString(strng) {
+    var value = strng.replace(/[^0-9]/ig,""); 
+    var b = strng.replace(/[^a-z]+/ig,"");
+    console.log(value);
+    console.log(b);
+    if(value === ""){
+        b = b+1;
+        console.log(b);
+    }else{
+        value = String(Number(value) + 1).padStart(value.length, '0'); 
+        let res = b + value;
+        console.log(res);
+        
+    }
+
+    }
+    incrementString("foobar99");
+    </script>

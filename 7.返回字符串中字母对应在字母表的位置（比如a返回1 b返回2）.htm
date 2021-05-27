@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.返回字符串中字母对应在字母表的位置</title>
+  </head>
+  <body></body>
+</html>
+<script>
+    // 想搜一下字符编码 结果直接搜出来了答案 不开心---
+  function alphabetPosition(text) {
+    function alphabetPosition(text) {
+      return text
+        .split("") // 分割成字元
+        .filter((f) => f.toLowerCase() != f.toUpperCase()) // 判定是否為英文字母
+        .map((m) => m.toLowerCase().charCodeAt(0) - 96) // 轉換成小寫取得 ascii 並減去 96
+        .join(" "); //
+    }
+
+    //   return text;
+  }
+  alphabetPosition("this");
+</script>
