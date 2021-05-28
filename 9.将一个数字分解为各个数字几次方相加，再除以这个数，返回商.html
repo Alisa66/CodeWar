@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>9.将一个数字分解为各个数字几次方相加，再除以这个数，返回商</title>
+</head>
+<body></body>
+</html>
+<script>
+// 大佬的
+function digPows(n, p) {
+    let x = String(n).split("").reduce((s, d, i) => {
+        s + Math.pow(d, p + i), 0
+    })
+     return x % n ? -1 : x / n
+}
+
+digPows(89,1)
+    //  就是不知道reduce怎么写
+    function digPow(n, p) {
+        let ss = String(n).split("").map(Number);
+        let count = 0;
+
+        for (let i = 0; i < ss.length; i++) {
+            count += Math.pow(ss[i], p);
+            p = p + 1;    
+        }
+        console.log(count);
+        if(count%n === 0){
+            console.log(count / n)
+        }else{
+            console.log(-1);
+            
+        }
+    }
+    digPow(695, 2);
+</script>
