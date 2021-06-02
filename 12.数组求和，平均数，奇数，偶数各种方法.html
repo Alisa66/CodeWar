@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    Array.prototype.square= function () {
+        return this.map(x => x**2)
+    }
+    Array.prototype.cube= function () {
+        return this.map(x => Math.pow(x,3))
+    }
+    Array.prototype.average= function () {
+        let count = this.reduce((all,cur)=> all+ cur)
+        return count/this.length
+    }
+    Array.prototype.sum= function () {
+        return this.reduce((all,cur)=> all+ cur,0)
+    }
+    Array.prototype.even= function () {
+        return this.filter(x => x%2 ===0)
+    }
+    Array.prototype.odd= function () {
+        return this.filter(x => x%2 !==0)
+    }
+    let numbers = [3];
+    console.log(    numbers.square() );
+    console.log(    numbers.cube() );
+    console.log('平均数',numbers.average() );
+    console.log(    numbers.sum() );
+    console.log(    numbers.even() );
+    console.log(    numbers.odd() );
+
+</script>

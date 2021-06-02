@@ -9,18 +9,17 @@
   <body></body>
 </html>
 <script>
- String.prototype.toJadenCase= function () {
+  String.prototype.toJadenCase= function () {
     //...
     return this.split(" ").map(value => {
       return  value.slice(0,1).toUpperCase()+value.slice(1)
     }).join(" ")
-    let ss = arg.split(" ");
 
   }
 
- let str = "How can mirrors be real if our eyes aren't real".toJadenCase()
+  let str = "How can mirrors be real if our eyes aren't real".toJadenCase()
 
- console.log( str);
- 
+  console.log( str);
+
 
 </script>

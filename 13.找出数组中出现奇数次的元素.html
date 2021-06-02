@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// 大神
+function findOdds(xs) { 
+   return  xs.reduce((a, b) => a ^ b);
+}
+console.log(findOdds([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
+
+// 别人的
+function findOdd(A) {
+
+    let objects = A.reduce(function(prev,next){ 
+            prev[next] = (prev[next] + 1) || 1; 
+            return prev; 
+        },{});
+        // console.log(objects);
+        for (const key in objects) {
+
+        console.log(key,objects[key]);
+        if(objects[key]%2 !== 0){
+            console.log(key);
+            return key
+        }
+
+            
+        }
+    // return 0;
+}
+// findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5])
+console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
+
+</script>

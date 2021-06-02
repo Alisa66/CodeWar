@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>11</title>
+    </head>
+<body></body>
+</html>
+<script>
+    // 大神的
+    function sortArray(array) {
+        const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+        return array.map((x) => x % 2 ? odd.shift() : x);
+}
+    // 飞哥的 我想都没有想出来
+function sortArray(array) {
+  // Return a sorted array.
+    let arr = []
+    array.forEach((item, index)=> {
+        if(item % 2 !== 0) {
+            arr.push(item)
+        }
+    })
+    arr.sort((a, b) => a-b)
+    let index = 0
+    return array.map((item) => {
+        return item % 2 !== 0 ? arr[index++]: item
+    })
+}
+    let arr = [ 1, 11, 2, 8, 3, 4, 5,7]
+    // sortArray(arr)
+    console.log(arr);
+    console.log(sortArray(arr)) ;
+</script>
