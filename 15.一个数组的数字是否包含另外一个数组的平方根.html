@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function comp(array1, array2){
+//your code here
+    let arrayA = array1.map(item => Math.pow(item,2)).sort((a,b)=>a-b)
+    console.log(arrayA);
+    console.log(arrayA.toString());
+    let a = arrayA.toString()
+    console.log(array2.sort((a,b)=> a-b).toString());
+    let b = array2.sort((a,b)=> a-b).toString()
+    if(a === b){
+        console.log('true');
+        
+    }else{
+        console.log('false');
+        
+    }
+
+}
+// comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 361, 25921, 361, 20736, 361])
+(comp([132, 14641, 20736, 361, 25921, 361, 20736, 361],0));
+        
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 array+1</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function toNonExponential(num) {
+    var m = num.toExponential().match(/\d(?:\.(\d*))?e([+-]\d+)/);
+    return num.toFixed(Math.max(0, (m[1] || '').length - m[2]));
+}
+
+    function upArray(arr){
+  // ... 
+    console.log(arr.map(i => i>=0).includes(false));
+    if(arr.map(i => i>=0).includes(false)){
+        console.log("包含小于0的数字");
+        return null
+    }
+    else{
+        console.log("不包括<0的数字");
+        let ss  = Number(arr.join(""))
+        console.log(toNonExponential(ss));
+        
+
+        
+        // let res = Number(arr.join("")) + 1;
+        // console.log(res);
+        
+        // let result = String(res).split("").map(Number)
+        // console.log(result);
+        
+        
+        
+    }
+
+
+}
+upArray([2,3,9]);
+
+</script>

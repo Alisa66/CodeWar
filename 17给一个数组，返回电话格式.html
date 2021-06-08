@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 返回电话格式</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 大神的
+    function createPhoneNumbers(numbers){
+    var format = "(xxx) xxx-xxxx";
+    
+    for(var i = 0; i < numbers.length; i++)
+    {
+        format = format.replace('x', numbers[i]);
+    }
+    
+    return format;
+}
+
+
+    function createPhoneNumber(numbers){
+        let start = numbers.slice(0,3)
+        console.log(start);
+        let middle = numbers.slice(3,6)
+        console.log(middle);
+        let last = numbers.slice(6)
+        console.log(last);
+        
+        let res = "(" + start.join("")+ ")"+ " "+middle.join("")+'-'+ last.join("")
+        console.log(res);
+        
+        
+        
+        
+}
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+</script>
