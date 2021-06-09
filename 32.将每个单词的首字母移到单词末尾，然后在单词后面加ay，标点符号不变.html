@@ -19,15 +19,15 @@
 
     
     var str= str.replace(/[^\w\s]|_/g, "")
-         .replace(/\s+/g, " ");
-     
-    console.log(str.split(" "))
+        .replace(/\s+/g, " ");
+    
+  console.log(str.split(" "))
 
-     return str.split(" ").map((value) => {
-       console.log( value.slice(1)+value.slice(0,1)+'ay');
-       
-        return  value.slice(1)+value.slice(0,1)+'ay';
-      }) .join(" ");
+    return str.split(" ").map((value) => {
+      console.log( value.slice(1)+value.slice(0,1)+'ay');
+      
+      return  value.slice(1)+value.slice(0,1)+'ay';
+    }) .join(" ");
 
   } 
   pigIt("Pig latin is cool !");

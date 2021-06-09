@@ -14,17 +14,17 @@
  
 //  大神的
 function persistence1(num) {
-   var times = 0;
-   
-   num = num.toString();
-   console.log(num);
-   
-   while (num.length > 1) {
-     times++;
-     num = num.split('').map(Number).reduce((a, b) => a * b).toString();
-     
-   }
-   return times;
+    var times = 0;
+    
+    num = num.toString();
+    console.log(num);
+    
+    while (num.length > 1) {
+      times++;
+      num = num.split('').map(Number).reduce((a, b) => a * b).toString();
+      
+    }
+    return times;
 }
 
 persistence1(999)

@@ -18,7 +18,6 @@
                             .reverse()
                             .join(" + ");
   // 我自己的  思路是正确的 就是不够简便
-
   function expandedForm(num) {
 
     const list = String(num).split("");
@@ -41,8 +40,7 @@
     let delete_Zero =result.filter(item =>{
       return  item !== 0
     })
-    console.log( delete_Zero.join("+"));
-   
+    console.log( delete_Zero.join("+")); 
     return  delete_Zero.join("+")
   }
 

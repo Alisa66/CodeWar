@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21将数组中的0移动到最后</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var moveZeros = function (arr) {
+  // TODO: Program me
+
+    return arr.filter(i=> i!==0).concat(arr.filter(i => i===0))
+    
+    
+    
+}
+
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+</script>

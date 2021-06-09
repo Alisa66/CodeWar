@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        20
+        返回字符串最中间的字母，字符串是奇数，就返回最中间的，是双数就返回中间两个
+    </title>
+    </head>
+    <body></body>
+</html>
+<script>
+    // 大神的
+        function getMiddle(s)
+    {
+    return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+    }
+    function getMiddle(s) {
+    //Code goes here!
+
+    if (s.length % 2 === 0) {
+        console.log(2333);
+
+        console.log(s[s.length / 2 - 1] + s[s.length / 2]);
+    } else {
+        console.log(s[(s.length - 1) / 2]);
+    }
+    }
+    getMiddle("test");
+</script>
