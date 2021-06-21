@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-17 11:44:01
+ * @LastEditTime: 2021-06-21 09:35:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\25.计算xxoo出现次数是否相同.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25 xx00</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 大神
+  function XO(str) {
+    let x = str.match(/x/gi);
+    let o = str.match(/o/gi);
+    return (x && x.length) === (o && o.length);
+  }
+  function XO(str) {
+    //code here
+
+    let array = Array.from(str.toLowerCase());
+    console.log(array);
+    if (array.length === 0) console.log("false");
+    return false;
+    let x = array.filter((i) => i === "x").length;
+
+    let o = array.filter((i) => i === "o").length;
+
+    if (x === 0 || o === 0 || x !== o) {
+      console.log("不等于");
+    } else {
+      console.log(1);
+    }
+  }
+  XO("");
+</script>

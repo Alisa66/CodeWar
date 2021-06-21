@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-21 09:35:42
+ * @LastEditTime: 2021-06-21 09:43:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\26返回每个数字的平方根组成的数字.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function squareDigits(num) {
+    //may the code be with you
+  
+    
+    let s = String(num).split("").map((i) => {
+      return Number(i*i)  ;
+    });
+    console.log(Number(s.join("")));
+    
+  }
+  squareDigits(3212);
+</script>
