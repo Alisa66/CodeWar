@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-12 17:38:01
+ * @LastEditTime: 2021-08-12 17:52:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\40.facebook点赞功能.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function likes(names) {
+    // TODO
+   
+    console.log(names);
+    console.log(names.length);
+    if(names.length === 0 ){
+        console.log('no one likes this');
+    }else if(names.length === 1){  
+            console.log(names[0]+' likes this');
+    }else if(names.length === 2) {
+        console.log( names[0]+ ' add ' +names[1]+' likes this');
+    }else if(names.length === 3) {
+        console.log( names[0] + ', '+names[1]+ ' add ' +names[2]+' likes this');
+    }else if(names.length > 3){
+        console.log(333);
+        
+        console.log( names[0] + ', '+names[1]+ ' add ' +(names.length -2 )+' others likes this');
+    }
+    
+    
+  }
+  likes(['Alex', 'Jacob', 'Mark', 'Max'])
+</script>

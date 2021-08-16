@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-12 17:51:41
+ * @LastEditTime: 2021-08-12 17:25:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\32.将每个单词的首字母移到单词末尾，然后在单词后面加ay，标点符号不变.html
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,23 +20,27 @@
   <body></body>
 </html>
 <script>
+  // 大神
   function pigIt(str) {
-    //Code here
-    // let ss = str.split(" ");
-    // console.log(typeof ss[ss.length-1]);
+    console.log(str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3"));
+    return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+  }
+  // 想了好久 想的很复杂
+  function pigIt(str) {
+    let array = str.split(" ");
+    var reg = /^[a-zA-Z]+$/;
 
-    
-    var str= str.replace(/[^\w\s]|_/g, "")
-        .replace(/\s+/g, " ");
-    
-  console.log(str.split(" "))
-
-    return str.split(" ").map((value) => {
-      console.log( value.slice(1)+value.slice(0,1)+'ay');
-      
-      return  value.slice(1)+value.slice(0,1)+'ay';
-    }) .join(" ");
-
-  } 
-  pigIt("Pig latin is cool !");
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      if (reg.test(array[i])) {
+        let revers = array[i].slice(1) + array[i].slice(0, 1) + "ay";
+        result.push(revers);
+      } else {
+        spec = array[i];
+        result.push(spec);
+      }
+    }
+    console.log(result.join(" "));
+  }
+  pigIt("Pig latin ! is cool");
 </script>

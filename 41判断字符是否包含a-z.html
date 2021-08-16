@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 11:11:24
+ * @LastEditTime: 2021-08-16 13:50:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\41判断字符是否包含a-z.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detect Pangram</title>
+  </head>
+  <body></body>
+</html>
+<script>
+    // 大神的
+  function isPangram(string) {
+    return "abcdefghijklmnopqrstuvwxyz"
+      .split("")
+      .every((x) => string.toLowerCase().includes(x));
+  }
+  function isPangram(string) {
+    let result = Array.from(string.toLowerCase()).sort().join("").trim();
+    result = result.replace(/[^a-zA-Z]/g, "");
+    var reg = /(.)\1{1,}/g; //正则表达式
+    var res2 = result.replace(reg, "$1"); //，实现字符串去重
+    const compare = "abcdefghijklmnopqrstuvwxyz";
+    return res2 === compare ? true : false;
+  }
+  isPangram("The quick brown fox jumps over the lazy dog.");
+</script>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-02 16:49:58
+ * @LastEditTime: 2021-07-29 17:05:14
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\13.找出数组中出现奇数次的元素.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,6 @@ console.log(findOdds([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
 
 // 别人的
 function findOdd(A) {
-
     let objects = A.reduce(function(prev,next){ 
             prev[next] = (prev[next] + 1) || 1; 
             return prev; 

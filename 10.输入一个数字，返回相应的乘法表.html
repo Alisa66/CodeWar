@@ -1,44 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-28 11:37:32
+ * @LastEditTime: 2021-08-12 17:31:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\10.输入一个数字，返回相应的乘法表.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>10.输入一个数字，返回相应的乘法表</title>
-</head>
-<body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.输入一个数字，返回相应的乘法表</title>
+  </head>
+  <body></body>
 </html>
 <script>
-    //大佬
-    multiplicationTables = function(size) {
+  //大佬
+  multiplicationTables = function (size) {
     var result = [];
-
     for (var i = 0; i < size; i++) {
-        result[i] = [];
-        for(var j = 0; j < size; j++) {
+      result[i] = [];
+      for (var j = 0; j < size; j++) {
         result[i][j] = (i + 1) * (j + 1);
-        }
+      }
     }
-    
-        return result 
-}
-    multiplicationTable = function (size) {
-        // insert code here
-        let TotalArray = [];
-        for (let i = 1; i <= size; i++) {
-            for(let j=1;j<=size;j++){
-                console.log(i*j);
-                TotalArray.push(i*j)
-            }
-        }
-        console.log(TotalArray);
-        
-        let result = [];
-        for (var i = 0, len = TotalArray.length; i < len; i += size) {
-            result.push(TotalArray.slice(i, i + size));
-        }
-        console.log(result);
-        
-    };
-multiplicationTable(3);
+    return result;
+  };
+  multiplicationTable = function (size) {
+    // insert code here
+    let TotalArray = [];
+    for (let i = 1; i <= size; i++) {
+      for (let j = 1; j <= size; j++) {
+        console.log(i * j);
+        TotalArray.push(i * j);
+      }
+    }
+    console.log(TotalArray);
+
+    let result = [];
+    for (var i = 0, len = TotalArray.length; i < len; i += size) {
+      result.push(TotalArray.slice(i, i + size));
+    }
+    console.log(result);
+  };
+  multiplicationTable(3);
 </script>

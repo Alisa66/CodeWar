@@ -23,12 +23,8 @@
     let power = Math.pow(n, 2);
     let array = String(power).split("").map(Number);
     for(let i = 0;i<array.length+1;i++){
-  
         let  a  = Number(array.slice(0,i).join(""))
-       
-        
         let  b  = Number(array.slice(i).join(""))
-
 
         while(a+b == n){
                console.log(String(a).length);

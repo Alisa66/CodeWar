@@ -1,34 +1,60 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-03 09:47:53
+ * @LastEditTime: 2021-07-29 18:02:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\15.一个数组的数字是否包含另外一个数组的平方根.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>15</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 <script>
-    function comp(array1, array2){
-//your code here
-    let arrayA = array1.map(item => Math.pow(item,2)).sort((a,b)=>a-b)
-    console.log(arrayA);
-    console.log(arrayA.toString());
-    let a = arrayA.toString()
-    console.log(array2.sort((a,b)=> a-b).toString());
-    let b = array2.sort((a,b)=> a-b).toString()
-    if(a === b){
-        console.log('true');
-        
-    }else{
-        console.log('false');
-        
-    }
+  // 别人的
+  function comp(a1, a2) {
+    if (!a1 || !a2 || a1.length !== a2.length) return false;
+    return (
+      a1
+        .map((x) => x * x)
+        .sort()
+        .toString() === a2.sort().toString()
+    );
+  }
+  // 没写出来
+  function comp(array1, array2) {
+    //your code here
+    if (a == [] && b === [])
+      if (array1?.length === array2?.length) {
+        const newarray = array1.map((x) => x * 2);
+        console.log(newarray);
+        let res = array2.every((x) => {
+          return newarray.includes(x);
+        });
+        console.log(res);
+      } else {
+        console.log(2222);
+        return null;
+      }
 
-}
-// comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 361, 25921, 361, 20736, 361])
-(comp([132, 14641, 20736, 361, 25921, 361, 20736, 361],0));
-        
+    // let arrayA = array1.map((item) => Math.pow(item, 2)).sort((a, b) => a - b);
+    // console.log(arrayA);
+    // console.log(arrayA.toString());
+    // let a = arrayA.toString();
+    // console.log(array2.sort((a, b) => a - b).toString());
+    // let b = array2.sort((a, b) => a - b).toString();
+    // if (a === b) {
+    //   console.log("true");
+    // } else {
+    //   console.log("false");
+    // }
+  }
+  // comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 361, 25921, 361, 20736, 361])
+  comp([1, 2, 3, 4, 5], [111, 222]);
 </script>

@@ -1,47 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-07 10:03:52
+ * @LastEditTime: 2021-07-29 16:46:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\16数组+1.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>16 array+1</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 <script>
-    function toNonExponential(num) {
-    var m = num.toExponential().match(/\d(?:\.(\d*))?e([+-]\d+)/);
-    return num.toFixed(Math.max(0, (m[1] || '').length - m[2]));
-}
+  //   function toNonExponential(num) {
+  //     var m = num.toExponential().match(/\d(?:\.(\d*))?e([+-]\d+)/);
+  //     return num.toFixed(Math.max(0, (m[1] || "").length - m[2]));
+  //   }
 
-    function upArray(arr){
-  // ... 
-    console.log(arr.map(i => i>=0).includes(false));
-    if(arr.map(i => i>=0).includes(false)){
-        console.log("包含小于0的数字");
-        return null
+  function upArray(arr) {
+    const zero = arr.filter((i) => {
+      return i < 0;
+    });
+
+    console.log(zero);
+    if (zero.length !== 0) {
+      console.log("false");
+
+      return false;
+    } else {
+      const str = arr.join("");
+      console.log(str);
+
+      a = String(1).padStart(str.length, 0);
+      console.log(a);
+      let t = 0;
+      let f = 0;
+      let sum = "";
+      for (let i = str.length - 1; i >= 0; i--) {
+        //  console.log(parseInt(str[i]));
+        //  console.log(parseInt(a[i]));
+        t = parseInt(str[i]) + parseInt(a[i]) + f;
+        f = Math.floor(t / 10);
+        sum = (t % 10) + sum;
+      }
+
+      if (f == 1) {
+        sum = "1" + sum;
+      }
+      console.log(sum.split("").map(Number));
+      
+      return sum.split("").map(Number)
+
     }
-    else{
-        console.log("不包括<0的数字");
-        let ss  = Number(arr.join(""))
-        console.log(toNonExponential(ss));
-        
-
-        
-        // let res = Number(arr.join("")) + 1;
-        // console.log(res);
-        
-        // let result = String(res).split("").map(Number)
-        // console.log(result);
-        
-        
-        
-    }
-
-
-}
-upArray([2,3,9]);
-
+  }
+  upArray([
+    9, 2, 2, 3, 3, 7, 2, 0, 3, 6, 8, 5, 4, 7, 7, 5, 8, 0, 7, 5, 3, 2, 6, 7, 8,
+    4, 2, 4, 2, 6, 7, 8, 7, 4, 5, 2, 9,
+  ]);
 </script>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-01 11:25:22
+ * @LastEditTime: 2021-08-12 17:14:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \CodeWar\11.数字排序，奇数升序排列偶数位置不变.html
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,10 +18,10 @@
 </html>
 <script>
     // 大神的
-    function sortArray(array) {
-        const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
-        return array.map((x) => x % 2 ? odd.shift() : x);
-}
+//     function sortArray(array) {
+//         const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
+//         return array.map((x) => x % 2 ? odd.shift() : x);
+// }
     // 飞哥的 我想都没有想出来
 function sortArray(array) {
   // Return a sorted array.
@@ -24,13 +32,14 @@ function sortArray(array) {
         }
     })
     arr.sort((a, b) => a-b)
+    
     let index = 0
     return array.map((item) => {
         return item % 2 !== 0 ? arr[index++]: item
     })
 }
     let arr = [ 1, 11, 2, 8, 3, 4, 5,7]
-    // sortArray(arr)
+   
     console.log(arr);
     console.log(sortArray(arr)) ;
 </script>
